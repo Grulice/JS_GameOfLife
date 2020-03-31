@@ -1,7 +1,7 @@
-const PLAYFIELD_WIDTH = 40;
-const PLAYFIELD_HEIGHT = 30;
+const PLAYFIELD_WIDTH = 60;
+const PLAYFIELD_HEIGHT = 60;
 // Update frequency in milliseconds
-const ANIMATION_SPEED = 400;
+const ANIMATION_SPEED = 100;
 
 let tbl_playField = document.getElementById("main-playfield");
 let btn_nextFrame = document.getElementById("button-next-frame");
@@ -79,6 +79,7 @@ function PlayField_Create() {
             });
             curCell.addEventListener("contextmenu", function (e) {
                 // secondary mouse button
+                e.preventDefault();
                 this.kill();
             });
             curRow.push(curCell);
